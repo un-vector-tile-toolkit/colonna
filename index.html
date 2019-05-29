@@ -23,10 +23,6 @@ require(modules, function(Map, VectorTileLayer) {
     zoom: 2
   })
   map.addLayer(new VectorTileLayer(styleUrl))
-  map.on('load', function() {
-    esri.config.defaults.io.corsEnabledServers.push(
-      'un-vector-tile-toolkit.github.io')
-  })
 })
 </script>
 </head>
