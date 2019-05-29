@@ -9,14 +9,19 @@ html, body, #map { height: 100%; margin: 0; padding: 0; }
 </style>
 <script src="https://js.arcgis.com/3.28/"></script>
 <script>
-  var map;
-   require(["esri/map", "dojo/domReady!"], function(Map) {
-    map = new Map("map", {
-      center: [135, 35],
-      zoom: 13
-    })
+var map
+var modules = [
+  "esri/map",
+  "esri/layers/VectorTileLayer",
+  "dojo/domReady!"
+]
+require(modules, function(Map, VectorTileLayer) {
+  map = new Map("map", {
+    center: [135, 35],
+    zoom: 13
   })
   map.addLayer(new VectorTileLayer('https://casale.vectortiles.xyz:8888/style.json'))
+})
 </script>
 </head>
 <body>
