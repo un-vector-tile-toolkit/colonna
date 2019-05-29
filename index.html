@@ -15,12 +15,13 @@ var modules = [
   "esri/layers/VectorTileLayer",
   "dojo/domReady!"
 ]
+var styleUrl = 'https://un-vector-tile-toolkit.github.io/blue-screeen/style.json'
 require(modules, function(Map, VectorTileLayer) {
   map = new Map("map", {
     center: [135, 35],
-    zoom: 13
+    zoom: 2
   })
-  map.addLayer(new VectorTileLayer('https://casale.vectortiles.xyz:8888/style.json'))
+  map.addLayer(new VectorTileLayer(styleUrl))
 })
 </script>
 </head>
